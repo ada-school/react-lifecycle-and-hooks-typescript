@@ -2,7 +2,8 @@ import React, { useState } from "react";
 
 export default function ContextSection() {
   const [counter, setCounter] = useState(0);
-
+  const [string, setString] = useState('hello!');
+  console.log(string)
   return (
     <div className="flex-center flex-column">
       <h3>useSate</h3>
@@ -22,6 +23,11 @@ export default function ContextSection() {
             +
           </button>
         </div>
+        <input
+          value={string}
+          onChange={event => setString(event.currentTarget.value)}
+        />
+        <span>{`${counter} ${string}`}</span>
       </div>
     </div>
   );

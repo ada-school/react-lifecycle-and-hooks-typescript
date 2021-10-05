@@ -30,12 +30,16 @@ const SecondComponent = () => (
     <ThirdComponent />
   </div>
 );
-const ThirdComponent = () => (
+const ThirdComponent = () => {
+  const { player, setPlayer } = useContext(PlayerContext);
+  return (
   <div className="flex-center flex-column">
     <h3>Tercer Nivel</h3>
+    <div>{`Current Player: ${player.name}`}</div>
     <FourthComponent />
   </div>
-);
+  )
+};
 const FourthComponent = () => {
   const { player, setPlayer } = useContext(PlayerContext);
   return (

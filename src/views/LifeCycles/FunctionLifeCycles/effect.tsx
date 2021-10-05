@@ -8,6 +8,10 @@ export default function ContextSection() {
     return () => clearInterval(timer);
   }, [time]);
 
+  useEffect(() => {
+    console.log("component did mount!")
+  }, [])
+
   return (
     <div>
       <h3>useEffect</h3>
